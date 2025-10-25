@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-g">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitish - a Programmer</title>
+    
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/lucide-icons"></script>
+
+    <style>
+        /* Define custom theme colors and fonts */
+        :root {
+            /* Light Mode */
+            --bg-cream: #fdfbf6;
+            --text-dark-teal: #0D4740;
+            --text-subtle: #0D4740a0; /* 80% opacity */
+            --accent-lavender: #E6E0FF;
+            --accent-light-teal: #C0F5E8;
+            --accent-soft-peach: #FFDAC1;
+            --accent-light-blue: #D6EEFF;
+            --ticker-line: rgba(13, 71, 64, 0.2);
+        }
+
+        html.dark {
+            /* Dark Mode */
+            --bg-cream: #1a2e2b; /* Dark teal bg */
+            --text-dark-teal: #fdfbf6; /* Light cream text */
+            --text-subtle: #fdfbf6a0; /* 80% opacity */
+            --accent-lavender: #2a3f3c; /* Muted dark card */
+            --accent-light-teal: #2a3f3c; /* Muted dark card */
+            --accent-soft-peach: #2a3f3c; /* Muted dark card */
+            --accent-light-blue: #2a3f3c; /* Muted dark card */
+            --ticker-line: rgba(253, 251, 246, 0.2);
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-dark-teal);
+            font-family: var(--font-sans);
+            transition: background-color 0.3s ease, color 0.3s ease; /* Animation */
+        }
+
+        /* Hero gradient */
+        .hero-gradient {
+            background-image: linear-gradient(180deg, var(--accent-lavender) 0%, var(--bg-cream) 100%);
+            transition: all 0.3s ease; /* Animate the gradient change */
+        }
+
+        /* Sparkle Animation (no changes) */
+        .sparkle {
+            animation: sparkle 3s infinite ease-in-out;
+            opacity: 0;
+        }
+        .sparkle:nth-child(2) { animation-delay: 0.3s; }
+        .sparkle:nth-child(3) { animation-delay: 0.6s; }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        /* Custom font */
+        .font-sacramento {
+            font-family: 'Sacramento', cursive;
+        }
+
+        /* --- Smooth Transitions for Components --- */
+        
+        /* Add transition to all elements that use our CSS variables */
+        header, footer, .rounded-3xl, #themeToggleBtn, button[type="submit"], .border-dashed, input[type="email"], textarea {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Fix for contact form inputs to use variables */
+        input[type="email"], textarea {
+            background-color: transparent !important; /* Make bg transparent */
+            color: var(--text-dark-teal) !important; /* Text color */
+            ring-color: var(--text-subtle) !important; /* Ring color */
+        }
+        input[type="email"]::placeholder, textarea::placeholder {
+            color: var(--text-subtle) !important; /* Placeholder color */
+            transition: color 0.3s ease;
+        }
+        input[type="email"]:focus, textarea:focus {
+            ring-color: var(--text-dark-teal) !important; /* Focus ring color */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="sticky top-0 z-50 w-full bg-[var(--bg-cream)]/80 backdrop-blur-md border-b border-[var(--accent-lavender)]">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <a href="#" class="text-2xl font-bold text-[var(--text-dark-teal)]">Kshitish.</a>
+            
+           
+
+            <div class="md:hidden">
+                <button class="text-[var(--text-dark-teal)]">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="about" class="relative hero-gradient pt-24 pb-20 md:pt-32 md:pb-28 overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                
+                <div class="absolute -top-8 left-1/4 w-8 h-8 text-[var(--text-dark-teal)] sparkle">
+                    <i data-lucide="gem"></i>
+                </div>
+                <div class="absolute top-1/4 -left-10 w-12 h-12 text-[var(--accent-light-blue)] sparkle">
+                    <i data-lucide="gem"></i>
+                </div>
+                <div class="absolute top-10 -right-10 w-10 h-10 text-[var(--accent-soft-peach)] sparkle">
+                    <i data-lucide="gem"></i>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-extrabold text-[var(--text-dark-teal)] leading-tight">
+                    Hi. I'm <span class="font-sacramento text-7xl md:text-9xl">Kshitish.</span>
+                    <br>
+                    A Programmer.
+                </h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-[var(--text-dark-teal)]/80">
+                    I am very keen to learn new things and apply them.
+                </p>
+            </div>
+        </section>
+        <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-light-teal)]">
+                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Skills</h2>
+                <ul class="mt-4 space-y-2 text-[var(--text-dark-teal)]/80">
+                    <li>&bull; Java (Core, JDBC)</li>
+                    <li>&bull; HTML, CSS, JavaScript</li>
+                    <li>&bull; TailwindCSS</li>
+                    <li>&bull; Operating Systems</li>
+                    <li>&bull; Computer Networking</li>
+                    <li>&bull; SQL & Database Management</li>
+                </ul>
+            </div>
+
+            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-soft-peach)]">
+                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Education</h2>
+                <div class="mt-4 space-y-3 text-[var(--text-dark-teal)]/80">
+                    <div>
+                        <h3 class="font-semibold text-[var(--text-dark-teal)]">M.Sc. Computer Science</h3>
+                        <p>Fakir Mohan Autonomous College</p>
+                        <p class="text-sm">2024 - 2026</p> 
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-[var(--text-dark-teal)]">B.Sc. Physics</h3>
+                        <p>Nilagiri Degree college</p>
+                        <p class="text-sm">2021 - 2024</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-light-blue)]">
+                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Projects</h2>
+                <ul class="mt-4 space-y-3 text-[var(--text-dark-teal)]/80">
+                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; Personal Portfolio Website</a></li>
+                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; Java Servlet Web App</a></li>
+                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; OS Process Scheduler</a></li>
+                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; See more on Github...</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    </main>
+
+<footer id="contact" class="border-t border-[var(--accent-lavender)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            
+            <div class="flex flex-col md:flex-row justify-between gap-12">
+                
+                
+                <div class="flex gap-12 md:gap-20">
+                    <div>
+                        <h3 class="font-bold text-base text-[var(--text-dark-teal)] mb-4">Elsewhere</h3>
+                        <ul class="space-y-3 text-sm text-[var(--text-dark-teal)]/80">
+                            
+                            <li><a href="#" class="hover:text-[var(--text-dark-teal)] transition-colors">Github</a></li>
+                            <li><a href="#" class="hover:text-[var(--text-dark-teal)] transition-colors">Posts</a></li>
+                            <li><a href="#" class="hover:text-[var(--text-dark-teal)] transition-colors">CV</a></li>
+                            <li><a href="#" class="hover:text-[var(--text-dark-teal)] transition-colors">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-base text-[var(--text-dark-teal)] mb-4">Contact</h3>
+                        <ul class="space-y-3 text-sm text-[var(--text-dark-teal)]/80">
+                            <li><a href="contact.html" class="hover:text-[var(--text-dark-teal)] transition-colors">Message</a></li>
+                        </ul>
+                    </div>
+                                </div>
+            </div>
+
+            <div class="relative w-full text-center mt-20 pt-8">
+                <div class="absolute top-8 left-0 w-full border-t border-dashed border-[var(--text-dark-teal)]/20"></div>
+                
+                <div class="relative inline-flex flex-col items-center">
+                    <button id="themeToggleBtn" title="Toggle light/dark mode" class="w-12 h-12 rounded-full bg-[var(--text-dark-teal)] text-[var(--bg-cream)] flex items-center justify-center transition-all hover:opacity-80 z-10 border-4 border-[var(--bg-cream)]" style="box-shadow: 0 0 0 1px var(--text-dark-teal);">
+                        <i data-lucide="sun" class="w-6 h-6"></i>
+                    </button>
+                    <div class="w-px h-8 bg-[var(--text-dark-teal)] -mt-2"></div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div id="lightbox" class="fixed inset-0 z-[999] bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <button id="closeLightbox" class="absolute top-6 right-6 z-[1000] text-white/70 hover:text-white transition-colors" aria-label="Close image viewer">
+            <i data-lucide="x" class="w-10 h-10"></i>
+        </button>
+        <img id="lightboxImg" src="" alt="Project large view" class="max-w-full max-h-full rounded-xl shadow-2xl">
+    </div>
+
+
+<script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // --- Theme Toggle ---
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const htmlEl = document.documentElement;
+
+        // Function to set the theme
+        function setTheme(isDark) {
+            if (isDark) {
+                htmlEl.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                // Update icon to moon
+                themeToggleBtn.innerHTML = '<i data-lucide="moon" class="w-6 h-6"></i>';
+            } else {
+                htmlEl.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                // Update icon to sun
+                themeToggleBtn.innerHTML = '<i data-lucide="sun" class="w-6 h-6"></i>';
+            }
+            // Re-initialize icons after changing innerHTML
+            lucide.createIcons();
+        }
+
+        // Event listener for the button
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = htmlEl.classList.contains('dark');
+            setTheme(!isDark);
+        });
+
+        // On page load, check saved preference or system preference
+        window.addEventListener('load', () => {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+            if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+                setTheme(true);
+            } else {
+                setTheme(false); // Default to light
+            }
+        });
+
+
+        // --- Image Lightbox ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const closeLightbox = document.getElementById('closeLightbox');
+        
+        // Get all project images
+        const projectImages = document.querySelectorAll('.project-image');
+        
+        projectImages.forEach(image => {
+            // Find the parent <a> tag (the project card)
+            const card = image.closest('.project-card');
+            
+            if (card) {
+                card.addEventListener('click', function(e) {
+                    // Prevent the <a> tag's default behavior
+                    e.preventDefault();
+                    
+                    // Set the image src and show the lightbox
+                    lightboxImg.src = image.src;
+                    lightbox.style.display = 'flex';
+                });
+            }
+        });
+
+        // Close lightbox when clicking the 'X' button
+        closeLightbox.onclick = function() {
+            lightbox.style.display = 'none';
+        };
+
+        // Close lightbox when clicking the background
+        lightbox.onclick = function(e) {
+            // Only close if the click is on the background itself, not the image
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+</html>
