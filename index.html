@@ -15,6 +15,11 @@
     
     <script src="https://unpkg.com/lucide-icons"></script>
 
+<!-- Skills Radar Section -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <style>
         /* Define custom theme colors and fonts */
         :root {
@@ -27,6 +32,7 @@
             --accent-soft-peach: #FFDAC1;
             --accent-light-blue: #D6EEFF;
             --ticker-line: rgba(13, 71, 64, 0.2);
+            --font-sans: 'Manrope', sans-serif;
         }
 
         html.dark {
@@ -96,7 +102,7 @@
 </head>
 <body class="antialiased">
 
-    <header class="sticky top-0 z-50 w-full bg-[var(--bg-cream)]/80 backdrop-blur-md border-b border-[var(--accent-lavender)]">
+    <header class="sticky top-0 z-50 w-[92%] mx-auto mt-4 rounded-full bg-[var(--accent-lavender)]/80 backdrop-blur-md border border-[var(--text-dark-teal)]/5">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
             <a href="#" class="text-2xl font-bold text-[var(--text-dark-teal)]">Kshitish.</a>
             
@@ -137,44 +143,114 @@
         </section>
         <section id="work" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-light-teal)]">
-                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Skills</h2>
-                <ul class="mt-4 space-y-2 text-[var(--text-dark-teal)]/80">
-                    <li>&bull; Java (Core, JDBC)</li>
-                    <li>&bull; HTML, CSS, JavaScript</li>
-                    <li>&bull; TailwindCSS</li>
-                    <li>&bull; Operating Systems</li>
-                    <li>&bull; Computer Networking</li>
-                    <li>&bull; SQL & Database Management</li>
-                </ul>
-            </div>
-
-            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-soft-peach)]">
-                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Education</h2>
-                <div class="mt-4 space-y-3 text-[var(--text-dark-teal)]/80">
-                    <div>
-                        <h3 class="font-semibold text-[var(--text-dark-teal)]">M.Sc. Computer Science</h3>
-                        <p>Fakir Mohan Autonomous College</p>
-                        <p class="text-sm">2024 - 2026</p> 
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-[var(--text-dark-teal)]">B.Sc. Physics</h3>
-                        <p>Nilagiri Degree college</p>
-                        <p class="text-sm">2021 - 2024</p>
+        <!-- Skills Radar Section -->
+        <div class="bg-[var(--accent-light-teal)] rounded-3xl p-8 md:p-12 mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Text & Icons -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[var(--text-dark-teal)] mb-6">Technical Proficiency</h2>
+                    <p class="text-[var(--text-dark-teal)]/80 mb-8 text-lg">
+                        I have built a diverse set of skills ranging from low-level programming to modern full-stack web development.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="coffee"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">Java</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="code-2"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">JavaScript</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="file-code"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">Python</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="atom"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">React</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="server"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">Node.js</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="palette"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">Tailwind</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="database"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">MongoDB</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-white/50 rounded-lg text-[var(--text-dark-teal)]"><i data-lucide="cpu"></i></div>
+                            <span class="font-semibold text-[var(--text-dark-teal)]">C/C++</span>
+                        </div>
                     </div>
                 </div>
+                
+                <!-- Right: Radar Chart -->
+                <div class="relative aspect-square md:aspect-auto md:h-[400px] flex items-center justify-center">
+                    <canvas id="skillsChart"></canvas>
+                </div>
             </div>
+        </div>
 
-            <div class="p-6 md:p-8 rounded-3xl bg-[var(--accent-light-blue)]">
-                <h2 class="text-3xl font-bold text-[var(--text-dark-teal)]">Projects</h2>
-                <ul class="mt-4 space-y-3 text-[var(--text-dark-teal)]/80">
-                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; Personal Portfolio Website</a></li>
-                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; Java Servlet Web App</a></li>
-                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; OS Process Scheduler</a></li>
-                    <li><a href="#" class="font-medium text-[var(--text-dark-teal)] hover:underline">&bull; See more on Github...</a></li>
-                </ul>
+        <!-- Education Section -->
+        <div class="bg-[var(--accent-soft-peach)] rounded-3xl p-8 md:p-12 mb-20">
+            <h2 class="text-3xl font-bold text-[var(--text-dark-teal)] mb-6">Education</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-[var(--text-dark-teal)]">M.Sc. Computer Science</h3>
+                    <p class="text-[var(--text-dark-teal)]/80">Fakir Mohan Autonomous College</p>
+                    <p class="text-sm text-[var(--text-dark-teal)]/60 mt-1">2024 - 2026</p> 
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-[var(--text-dark-teal)]">B.Sc. Physics</h3>
+                    <p class="text-[var(--text-dark-teal)]/80">Nilagiri Degree college</p>
+                    <p class="text-sm text-[var(--text-dark-teal)]/60 mt-1">2021 - 2024</p>
+                </div>
+            </div>
+        </div>
+            
+        <!-- Featured Projects Section -->
+        <div>
+            <h2 class="text-4xl font-bold text-[var(--text-dark-teal)] mb-10">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-[#fef3e2] rounded-2xl p-6 flex flex-col h-full transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-2xl font-bold text-[var(--text-dark-teal)] mb-3">Portfolio Website</h3>
+                    <p class="text-[var(--text-dark-teal)]/80 mb-6 flex-grow">A responsive personal portfolio website featuring dark mode, animations, and a clean modern UI.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">HTML</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">Tailwind</span>
+                    </div>
+                    <a href="#" class="w-full block text-center bg-white text-[var(--text-dark-teal)] font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">View Project</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-[#fef3e2] rounded-2xl p-6 flex flex-col h-full transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-2xl font-bold text-[var(--text-dark-teal)] mb-3">Java Servlet App</h3>
+                    <p class="text-[var(--text-dark-teal)]/80 mb-6 flex-grow">A dynamic web application built with Java Servlets and JSP for managing user data securely.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">Java</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">MySQL</span>
+                    </div>
+                    <a href="#" class="w-full block text-center bg-white text-[var(--text-dark-teal)] font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">View Project</a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-[#fef3e2] rounded-2xl p-6 flex flex-col h-full transition-transform hover:-translate-y-1 duration-300">
+                    <h3 class="text-2xl font-bold text-[var(--text-dark-teal)] mb-3">OS Scheduler</h3>
+                    <p class="text-[var(--text-dark-teal)]/80 mb-6 flex-grow">A simulation of operating system process scheduling algorithms like Round Robin and SJF.</p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">C++</span>
+                        <span class="px-3 py-1 bg-pink-100 text-pink-800 text-xs font-bold rounded-full">Algorithms</span>
+                    </div>
+                    <a href="#" class="w-full block text-center bg-white text-[var(--text-dark-teal)] font-bold py-3 rounded-xl hover:opacity-90 transition-opacity">View Project</a>
+                </div>
+
             </div>
 
         </div>
@@ -212,12 +288,6 @@
             <div class="relative w-full text-center mt-20 pt-8">
                 <div class="absolute top-8 left-0 w-full border-t border-dashed border-[var(--text-dark-teal)]/20"></div>
                 
-                <div class="relative inline-flex flex-col items-center">
-                    <button id="themeToggleBtn" title="Toggle light/dark mode" class="w-12 h-12 rounded-full bg-[var(--text-dark-teal)] text-[var(--bg-cream)] flex items-center justify-center transition-all hover:opacity-80 z-10 border-4 border-[var(--bg-cream)]" style="box-shadow: 0 0 0 1px var(--text-dark-teal);">
-                        <i data-lucide="sun" class="w-6 h-6"></i>
-                    </button>
-                    <div class="w-px h-8 bg-[var(--text-dark-teal)] -mt-2"></div>
-                </div>
             </div>
 
         </div>
@@ -245,22 +315,24 @@
                 htmlEl.classList.add('dark');
                 localStorage.setItem('theme', 'dark');
                 // Update icon to moon
-                themeToggleBtn.innerHTML = '<i data-lucide="moon" class="w-6 h-6"></i>';
+                if (themeToggleBtn) themeToggleBtn.innerHTML = '<i data-lucide="moon" class="w-6 h-6"></i>';
             } else {
                 htmlEl.classList.remove('dark');
                 localStorage.setItem('theme', 'light');
                 // Update icon to sun
-                themeToggleBtn.innerHTML = '<i data-lucide="sun" class="w-6 h-6"></i>';
+                if (themeToggleBtn) themeToggleBtn.innerHTML = '<i data-lucide="sun" class="w-6 h-6"></i>';
             }
             // Re-initialize icons after changing innerHTML
             lucide.createIcons();
         }
 
         // Event listener for the button
-        themeToggleBtn.addEventListener('click', () => {
-            const isDark = htmlEl.classList.contains('dark');
-            setTheme(!isDark);
-        });
+        if (themeToggleBtn) {
+            themeToggleBtn.addEventListener('click', () => {
+                const isDark = htmlEl.classList.contains('dark');
+                setTheme(!isDark);
+            });
+        }
 
         // On page load, check saved preference or system preference
         window.addEventListener('load', () => {
@@ -311,6 +383,48 @@
                 lightbox.style.display = 'none';
             }
         };
+
+        // --- Skills Radar Chart ---
+        const ctx = document.getElementById('skillsChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'radar',
+            data: {
+                labels: ['Java', 'JavaScript', 'Python', 'React', 'Node.js', 'Tailwind', 'MongoDB', 'C/C++'],
+                datasets: [{
+                    label: 'Proficiency',
+                    data: [90, 85, 80, 75, 70, 85, 65, 75],
+                    backgroundColor: 'rgba(13, 71, 72, 0.2)',
+                    borderColor: 'rgb(13, 71, 72)',
+                    borderWidth: 2,
+                    pointBackgroundColor: 'rgb(13, 71, 72)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgb(13, 71, 72)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(13, 71, 72, 0.1)' },
+                        grid: { color: 'rgba(13, 71, 72, 0.1)' },
+                        pointLabels: {
+                            color: 'rgb(13, 71, 72)',
+                            font: {
+                                family: "'Manrope', sans-serif",
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        },
+                        ticks: { display: false, backdropColor: 'transparent' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
     </script>
 
 </body>
