@@ -1,0 +1,83 @@
+/* --- Basic Reset & Font --- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    /* A slightly off-white background */
+    color: #333;
+}
+
+/* --- The Magic Container --- */
+/* This centers your content on the page */
+.container {
+    max-width: 900px;
+    /* Sets a max width */
+    margin: 0 auto;
+    /* Centers it horizontally */
+    padding: 20px;
+    /* Adds some space on the sides */
+}
+
+/* --- Typography --- */
+h1 {
+    font-size: 2.5rem;
+    /* rem is a modern unit for font size */
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid #eee;
+    /* Adds a nice little line */
+    padding-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- Links --- */
+a {
+    color: #007bff;
+    /* A standard blue link color */
+    text-decoration: none;
+    /* Removes the underline */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* Adds underline back on hover */
+}
+
+/* --- Footer --- */
+footer ul {
+    list-style: none;
+    /* Removes bullets */
+    padding: 0;
+    display: flex;
+    /* Makes the links line up horizontally */
+    gap: 20px;
+    /* Adds space between links */
+}
+
+/* --- Project Grid (A simple start) --- */
+
+/* This is the new part */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Creates 2 equal columns */
+    gap: 20px;
+    /* This is the space between your cards */
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    /* We removed margin-bottom from here */
+}

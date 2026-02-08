@@ -1,0 +1,177 @@
+:root {
+    /* Light Mode */
+    --bg-cream: #fdfbf6;
+    --text-dark-teal: #0D4740;
+    --text-subtle: #0D4740a0;
+    /* 80% opacity */
+    --accent-lavender: #E6E0FF;
+    --accent-light-teal: #C0F5E8;
+    --accent-soft-peach: #FFDAC1;
+    --accent-light-blue: #D6EEFF;
+    --ticker-line: rgba(13, 71, 64, 0.2);
+}
+
+html.dark {
+    /* Dark Mode */
+    --bg-cream: #1a2e2b;
+    /* Dark teal bg */
+    --text-dark-teal: #fdfbf6;
+    /* Light cream text */
+    --text-subtle: #fdfbf6a0;
+    /* 80% opacity */
+    --accent-lavender: #2a3f3c;
+    /* Muted dark card */
+    --accent-light-teal: #2a3f3c;
+    /* Muted dark card */
+    --accent-soft-peach: #2a3f3c;
+    /* Muted dark card */
+    --accent-light-blue: #2a3f3c;
+    /* Muted dark card */
+    --ticker-line: rgba(253, 251, 246, 0.2);
+}
+
+body {
+    background-color: var(--bg-cream);
+    color: var(--text-dark-teal);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Animation */
+}
+
+/* Hero gradient */
+/* Hero gradient */
+/* Hero gradient */
+/* Hero gradient */
+.hero-gradient {
+    /* We create a wide, multi-color gradient */
+    background-image: linear-gradient(90deg,
+            var(--accent-lavender),
+            var(--accent-light-blue),
+            var(--accent-soft-peach),
+            var(--accent-lavender)
+            /* Loops back to the start color */
+        );
+    background-size: 400% 400%;
+    /* Makes the gradient 4x wider */
+
+    /* Apply the animation */
+    animation: animatedGradient 8s ease infinite;
+    /* Faster 8s duration */
+
+    transition: all 0.3s ease;
+}
+
+/* --- Animated Gradient --- */
+/* (Add this at the bottom of your file if it's not there) */
+@keyframes animatedGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Sparkle Animation (no changes) */
+.sparkle {
+    animation: sparkle 3s infinite ease-in-out;
+    opacity: 0;
+}
+
+.sparkle:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.sparkle:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        opacity: 0;
+        transform: scale(0.5) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1) rotate(180deg);
+    }
+}
+
+/* --- Animated Gradient --- */
+
+
+
+/* Custom font */
+.font-sacramento {
+    font-family: 'Sacramento', cursive;
+}
+
+/* --- Smooth Transitions for Components --- */
+
+/* Add transition to all elements that use our CSS variables */
+header,
+footer,
+.rounded-3xl,
+#themeToggleBtn,
+button[type="submit"],
+.border-dashed,
+input[type="email"],
+textarea {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Fix for contact form inputs to use variables */
+input[type="email"],
+textarea {
+    background-color: transparent !important;
+    /* Make bg transparent */
+    color: var(--text-dark-teal) !important;
+    /* Text color */
+    ring-color: var(--text-subtle) !important;
+    /* Ring color */
+}
+
+input[type="email"]::placeholder,
+textarea::placeholder {
+    color: var(--text-subtle) !important;
+    /* Placeholder color */
+    transition: color 0.3s ease;
+}
+
+input[type="email"]:focus,
+textarea:focus {
+    ring-color: var(--text-dark-teal) !important;
+    /* Focus ring color */
+}
+
+/* --- Page Load Animation --- */
+
+@keyframes fadeInUp {
+
+    /* Starts hidden and 20px down */
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    /* Fades in to its normal position */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* This is the class we will add to our HTML elements */
+body .fade-in-up {
+    opacity: 0;
+    /* Start hidden */
+    animation: fadeInUp 1s ease-out forwards;
+}
